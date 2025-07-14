@@ -1,28 +1,58 @@
 body {
-  background: #0a0a23;
-  color: white;
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.overlay {
   text-align: center;
-  padding: 50px;
+  animation: fadeIn 3s ease-in-out;
 }
 
-h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
+.overlay img {
+  max-width: 150px;
+  animation: float 5s ease-in-out infinite;
 }
 
-input {
-  padding: 10px;
-  font-size: 16px;
-  width: 250px;
+.overlay h1 {
+  font-size: 3rem;
+  margin: 20px 0 10px;
 }
 
-button {
+.overlay h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
   padding: 10px 20px;
-  background: linear-gradient(90deg, #00cfff, #4b00ff);
-  border: none;
-  color: white;
-  font-size: 18px;
-  margin-left: 10px;
-  cursor: pointer;
+  background: #1da1f2;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #0d8ddb;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
