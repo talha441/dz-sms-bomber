@@ -1,15 +1,33 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>DZ SMS BOMBER</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <h1>DZ SMS BOMBER</h1>
   <form>
     <input type="text" placeholder="Enter Phone Number">
     <button type="submit">Launch Attack</button>
   </form>
+
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const phone = form.querySelector('input').value;
+
+      const response = await fetch('/api/bomber', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone })
+      });
+
+      const data = await response.json();
+      alert(data.message);
+    });
+  </script>
 </body>
 </html>
