@@ -2,32 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DZ SMS BOMBER</title>
+  <title>Abu Talha | Team Csb</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <h1>DZ SMS BOMBER</h1>
-  <form>
-    <input type="text" placeholder="Enter Phone Number">
-    <button type="submit">Launch Attack</button>
-  </form>
-
-  <script>
-    const form = document.querySelector('form');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const phone = form.querySelector('input').value;
-
-      const response = await fetch('/api/bomber', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phone })
-      });
-
-      const data = await response.json();
-      alert(data.message);
-    });
-  </script>
+  <div class="overlay">
+    <img src="logo.png" alt="Team Csb Logo">
+    <h1>Abu Talha</h1>
+    <h2>Powered by Team Csb</h2>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/1HftM2q1zd/" target="_blank">Facebook Page</a>
+      <a href="https://www.facebook.com/share/g/16ZGAdSFHv/" target="_blank">Facebook Group</a>
+      <a href="https://t.me/TeamCSB404" target="_blank">Telegram Channel</a>
+    </div>
+  </div>
 </body>
 </html>
